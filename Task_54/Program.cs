@@ -47,3 +47,42 @@ void FillRandomArray(int[,] array)
         }
     }
 }
+
+//Метод упорядовачивания чисел в каждой строке
+void SwapArray(int[,] arr)
+{
+    
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            for (int k = 0; k < arr.GetLength(1) - 1; k++)
+            {
+                if (arr[i, k] < arr[i, k + 1])
+                {
+                    int temp = arr[i, k + 1];
+                    arr[i, k + 1] = arr[i, k];
+                    arr[i, k] = temp;
+                }
+            }
+        }
+    }
+}
+//==============================================================================================
+
+int rowSize = EnterMesseng("Введите количество строк : ");
+int colSize = EnterMesseng("Введите количество столбцов : ");
+
+int[,] array = CreateArray(rowSize, colSize);
+
+Console.WriteLine();
+FillRandomArray(array);
+
+Console.WriteLine();
+PrintArray(array);
+
+SwapArray(array);
+
+Console.WriteLine();
+PrintArray(array);
+
