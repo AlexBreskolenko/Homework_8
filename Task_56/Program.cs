@@ -60,7 +60,7 @@ int FoundMinSumLine(int[,] arr)
 
     for(int i = 0; i < arrSum.Length; i++)
     {
-        if(minSum < arrSum[i])
+        if(minSum > arrSum[i])
         {
             minSum = arrSum[i];
             index = i;
